@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CONFERMATION</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/static/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="/static/css/templatemo-festava-live.css" rel="stylesheet">
+	<style>
+		#pay-btn{
+			
+        background-color: #ee5007;
+        color: #ffff;
+        width: 90px;
+        height: 35px;
+        border-radius: 20px;
+        border-color: #ee5007;
+    
+		}
+	</style>
+    <!--
+
+TemplateMo 583 Festava Live
+
+https://templatemo.com/tm-583-festava-live
+
+-->
+
+</head>
+
+<body>
+
+    <main>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-person custom-icon me-2"></i>
+                            <strong class="text-dark">Please conferm your details and procceds further to make payments</strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    Festava Live
+                </a>
+
+                <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="eventdash#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_3">Artists</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_4">Schedule</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_5">Pricing</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_6">Contact</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="ticket-section section-padding">
+            <div class="section-overlay"></div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-10 mx-auto">
+						<form method="post" action="{% url 'invoices' %}">
+							{% csrf_token %}                            
+							<h2 class="text-center mb-4">Get started here</h2>
+							<input type="hidden" id="name" name="name" value="{{ name }}">
+							<input type="hidden" id="email" name="email" value="{{ email }}">
+							<input type="hidden" id="mobile" name="mobile" value="{{ mobile }}">
+							<input type="hidden" value="{{ eventid }}" name="eventid">
+
+                            <div class="ticket-form-body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <p id="ticket-form-name"
+                                            class="form-control" >Name: {{ name }}</p>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <p id="ticket-form-email" class="form-control" >Email: {{ email }}</p>
+                                    </div>
+									<div class="col-lg-6 col-md-6 col-12">
+                                        <p id="ticket-form-email" class="form-control" >Mobile: {{ mobile }}</p>
+                                    </div>
+									<div>
+										<input type="submit" class="btn" id="pay-btn">BOOK EVENT</input>
+									</div>
+                                </div>
+
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">Festava Live</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">About</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Artists</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Schedule</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Pricing</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 090-080-0760" class="site-footer-link">
+                            090-080-0760
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@company.com" class="site-footer-link">
+                            hello@company.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        Silang Junction South, Tagaytay, Cavite, Philippines</p>
+
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                        <span>Our Maps</span>
+                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="16" cy="16" r="15.5"></circle>
+                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <p class="copyright-text">Copyright © 2036 Festava Live Company</p>
+                        <p class="copyright-text">Distributed by: <a href="https://themewagon.com">ThemeWagon</a></p>
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+
+T e m p l a t e M o
+
+-->
+    <!-- JAVASCRIPT FILES -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.sticky.js"></script>
+    <script src="/static/js/custom.js"></script>
+	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+
+	          const val2 = sessionStorage.getItem('val2');
+          console.log(val2)
+// $.ajax({
+//     type: 'POST',
+//     url: 'payment/',
+//     data: {'val2': val2},
+//     success: function(response){
+//         // succ
+//     }
+//   })
+  	var price_label= sessionStorage.getItem('val2'); 
+
+	var options = {
+	// Enter the Key ID generated from the Dashboard
+	key: "{{ razorpay_merchant_key }}",
+	
+	// Amount is in currency subunits.
+	// Default currency is INR. Hence,
+	// 50000 refers to 50000 paise
+	amount: 30000,
+	currency: "{{ currency }}",
+	
+	// Your/store name.
+	name: "Dj Razorpay",
+    "handler": function (response) {
+//   alert("Payment Successful")
+  // Add your code here to handle the payment success
+  
+    window.location.href = "invoices/";
+  
+  // Store the value of val1 in sessionStorage
+
+
+  var rzp1 = new Razorpay(options);
+},
+	
+	// Pass the `id` obtained in the response of Step 1
+	order_id: "{{ razorpay_order_id }}",
+	callback_url: "{{ callback_url }}",
+	};
+	
+	// initialise razorpay with the options.
+	var rzp1 = new Razorpay(options);
+	
+	// add event listener to the payment button.
+	document.getElementById("pay-btn").onclick = function (e) {
+
+	rzp1.open();
+	e.preventDefault();
+    
+	};
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #464343;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  z-index: 999; /* or any value higher than other elements on the page */
+}
+body {
+  padding-top: 60px; /* equal to the height of your navbar */
+}
+
+
+
+/* logo styles */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* nav links styles */
+.nav-links {
+  display: flex;
+  justify-content: flex-start; /* align links to the left */
+  align-items: center;
+  width: 40%;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-right: 20px; /* add some space between links */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* burger styles */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  
+  .nav-links li {
+    opacity: 0;
+  }
+  
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(2%);
+}
+
+.nav-links li {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#img1{
+    height: 50px;
+    width: 150px;
+}
+nav{
+    height: 70px;
+}
+
+    </style>
+</head>
+<body>
+    {% load static %}
+    <header>
+    <nav class="navbar">
+        
+        <ul class="nav-links">
+            <li ><img src='/media/pyplaner1.png' alt="logo" id="img1"></li>          <li><a href='{% url "home" %}' class="navbarlink homelink">Home</a></li>
+          <li><a href="#" class="navbarlink aboutlink" >About</a
+></li>
+          <li><a href="#" class="navbarlink serviceslink" >Services</a></li>
+          <li><a href="#" class="navbarlink contactlink" >Contact</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+      
+</body>
+</html>

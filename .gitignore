@@ -1,0 +1,11 @@
+*.png
+*.jpg
+*.jpeg
+static/
+theevent-gh-pages/
+.pyc
+myapp1/migrations/*
+**/__pycache__/*
+venv/
+fonts/
+theevent-gh-pagesmain

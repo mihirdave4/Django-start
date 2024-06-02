@@ -1,0 +1,97 @@
+{% extends "admin/change_form.html" %}
+
+
+{% block submit_buttons_bottom %} {{ block.super }}
+<script>
+   
+   let hassub= document.querySelector("#id_hassub_event")
+    let subloc= document.querySelector("#sub_location_set-group")
+
+    subloc.style.display = 'none'; 
+
+    hassub.addEventListener('change', function() {
+      if (hassub.checked) {
+        subloc.style.display = 'block';
+      } else {
+        subloc.style.display = 'none';
+      }
+    });
+
+
+
+
+
+    // let hassub= document.querySelector("#id_hassub_event")
+    // let subloc= document.querySelector("#sub_location_set-group")
+
+
+
+    var showFormCheckbox = document.querySelector('#id_has_tickets');
+    var myForm = document.querySelector('.field-total_count');
+    var hasticket= document.querySelector("#ticket_set-group");
+
+    myForm.style.display = "none"
+    hasticket.style.display= "none"
+
+    showFormCheckbox.addEventListener('change', function() {
+      if (showFormCheckbox.checked) {
+        myForm.style.display = 'block';
+        hasticket.style.display= "block";
+
+      } else {
+        myForm.style.display = 'none';
+        hasticket.style.display= "none";
+
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let totalPrice= document.querySelector("#id_total_price")
+let paidAmount= document.querySelector("#id_paid_amount")
+let totalval= totalPrice.value
+let paidAmountval= paidAmount.value
+
+
+let pending= document.querySelector("#id_pending_amount")
+
+let rest= totalval- paidAmountval
+
+pending.value= rest;
+
+
+
+
+
+
+
+// function updatePendingAmount() {
+//   const totalPrice = parseFloat(totalPriceInput.value) || 0;
+//   const paidAmount = parseFloat(paidAmountInput.value) || 0;
+//   const pendingAmount = totalPrice - paidAmount;
+
+//   if (pendingAmount < 0) {
+//     pendingAmountInput.value = 0;
+//   } else {
+//     pendingAmountInput.value = pendingAmount.toFixed(2);
+//   }
+// }
+
+// totalPriceInput.addEventListener('input', updatePendingAmount);
+// paidAmountInput.addEventListener('input', updatePendingAmount);
+
+
+</script>
+{% endblock %}
+

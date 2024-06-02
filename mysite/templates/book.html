@@ -1,0 +1,456 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PyPlanner</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="/static/https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/static/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="/static/css/templatemo-festava-live.css" rel="stylesheet">
+<style>
+      
+    #img1{
+    height: 50px;
+    width: 150px;
+}
+
+</style>
+    <!--
+
+TemplateMo 583 Festava Live
+
+https://templatemo.com/tm-583-festava-live
+
+-->
+</head>
+
+<body>
+
+    <main>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-person custom-icon me-2"></i>
+                            <strong class="text-dark">Welcome to {{ even.name }} event, book your seat now with pyplanner </strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    PyPlanner
+                </a>
+
+                <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_2">About</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <!-- <a class="nav-link click-scroll" href="#section_3">Artists</a> -->
+                        </li>
+
+                        <li class="nav-item">
+                            <!-- <a class="nav-link click-scroll" href="#section_4">Schedule</a> -->
+                        </li>
+
+                        <li class="nav-item">
+                            <!-- <a class="nav-link click-scroll" href="#section_5">Pricing</a> -->
+                        </li>
+
+                        <li class="nav-item">
+                            <!-- <a class="nav-link click-scroll" href="#section_2">Contact</a> -->
+                        </li>
+                    </ul>
+
+                    <!-- <a href="ticket.html" class="btn custom-btn d-lg-block d-none">Buy Ticket</a> -->
+                    <li ><img src='/media/pyplaner1.png' alt="logo" id="img1"></li>                </div>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="hero-section" id="section_1">
+            <div class="section-overlay"></div>
+
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row">
+
+                    <div class="col-12 mt-auto mb-5 text-center">
+                        <small>PyPlanner Presents</small>
+
+                        <h1 class="text-white mb-5">{{ even.name }}</h1>
+
+                        <a class="btn custom-btn smoothscroll" href="#section_2">Let's begin</a>
+                    </div>
+
+                    <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
+                        <div class="date-wrap">
+                            <h5 class="text-white">
+                                <i class="custom-icon bi-clock me-2"></i>
+                                10 - 12<sup>th</sup>, Dec 2023
+                            </h5>
+                        </div>
+
+                        <div class="location-wrap mx-auto py-3 py-lg-0">
+                            <h5 class="text-white">
+                                <i class="custom-icon bi-geo-alt me-2"></i>
+                                {{ loc.street_name }}, {{ loc.city }}, {{ loc.country }}                            </h5>
+                        </div>
+
+                        <div class="social-share">
+                            <ul class="social-icon d-flex align-items-center justify-content-center">
+                                <span class="text-white me-3">Share:</span>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-facebook"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-twitter"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-instagram"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="/static/video/pexels-2022395.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+
+        <section class="about-section section-padding" id="section_2" style="z-index: 5;">
+            <div class="container">
+                <div class="row">
+                  <form action="{% url 'userdetail' %}" method="post">  
+
+                    <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
+                        <div class="services-info">
+                            <h2 class="text-white mb-4">About Festava 2022</h2>
+
+                            <p class="text-white">From: {{ even.datetime_from }}.</p>
+
+                            <h6 class="text-white mt-4">TO: {{ even.datetime_to }}</h6>
+
+                            <p class="text-white">Loaction: {{ loc.title  }}</p>
+                            <!-- <p>Host Of the Event : {{ client.client_name }}</p> -->
+
+                            <h6 class="text-white mt-4">Book your seat in {{ even.name }} now and enjoy a part of your life with us </h6>
+
+                            <p class="text-white">{{ loc.street_name }}, {{ loc.city }}, {{ loc.country }}</p>
+                            <input type="number" id="number_of_ticket" placeholder="No Of Tickets" min="0" name="number_of_ticket">
+
+                            <select id="ticket-type-{{ even.eventid }}" name="ticket-type">
+                              <option>Select Types of Tickets</option>
+                              {% for tick in tick %}
+                              <option value="{{ tick.ticket_price }}">{{tick.type_of_ticket}}</option>
+                              {% endfor %}
+                            </select>
+                              {% csrf_token %}
+                          
+                          <p>Total Price: </p>
+                          <p id="price" name="price">Ticket Price: $</p>
+                          
+                            <input type="submit" class="btn custom-btn d-lg-block d-none" id="" onclick="book()">BOOK EVENT</input>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="about-text-wrap">
+                            <img src="/media/{{ even.image }}" class="about-image img-fluid">
+
+                            <div class="about-text-info d-flex">
+                                <div class="d-flex">
+                                    <i class="about-text-icon bi-person"></i>
+                                </div>
+
+
+                                <div class="ms-4">
+                                    <h3>{{ even.name }}</h3>
+
+                                    <p class="mb-0">your amazing festival experience with us</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </form>
+
+                </div>
+            </div>
+        </section>
+
+
+        
+        
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">PyPlanner</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#section_1" class="site-footer-link">Home</a>
+                        </li>
+
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_2" class="site-footer-link">Events</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 090-080-0760" class="site-footer-link">
+                            090-080-0760
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@company.com" class="site-footer-link">
+                            hello@company.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        THE FIRST , Near ITC Narmda, Vastrapur, Ahemdabad</p>
+
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                        <span>Our Maps</span>
+                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="16" cy="16" r="15.5"></circle>
+                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <p class="copyright-text">Copyright © 2036 PyPlanner Company</p>
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+
+T e m p l a t e M o
+
+-->
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.sticky.js"></script>
+    <script src="/static/js/click-scroll.js"></script>
+    <script src="/static/js/custom.js"></script>
+    <script>
+
+      function book(){
+          window.location.href= "/userdetail/"
+      }
+      
+      
+      function storage(){
+        const val1 = para.value * numberInput.value 
+        sessionStorage.setItem(val1)
+      }
+      
+      
+      var element = $('#number_of_ticket');
+      
+      
+      const price_lab = document.getElementsByClassName("price-label svelte-13mgn3i")
+      console.log(price_lab)
+      price_lab.textContent= "Price: " + sessionStorage.getItem('val2')
+      
+      
+      
+      
+      
+        const selectElement = document.querySelector("#ticket-type-{{ even.eventid }}");
+        const para= document.querySelector("#price");
+        const numberInput = document.querySelector("#number_of_ticket");
+        
+      
+      
+      
+        
+        
+        selectElement.addEventListener("change", function(event) {
+          const val = event.target.value;
+          const val1= val * numberInput.value;
+          para.textContent = val1;
+          const val2= val1
+          sessionStorage.setItem('val2', val2);
+      
+        });
+      
+        numberInput.addEventListener("input", function(event) {
+          const val = selectElement.value;
+          const val1 = val * event.target.value;
+          const val2= val1 
+          sessionStorage.setItem('val2', val2);
+          const number_ticket = parseInt(document.querySelector("#number_of_ticket").value); // get the value of the input field
+            sessionStorage.setItem('number_ticket', number_ticket);
+      
+          para.textContent = val1;
+        });
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        </script>
+
+</body>
+
+</html>
